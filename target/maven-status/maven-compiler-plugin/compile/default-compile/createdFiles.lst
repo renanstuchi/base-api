@@ -1,0 +1,4 @@
+com/renan/config/MyApp.class
+com/renan/resources/TaskResource.class
+com/renan/services/TaskService.class
+com/renan/models/Task.class

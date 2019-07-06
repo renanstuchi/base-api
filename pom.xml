@@ -1,0 +1,273 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com</groupId>
+  <artifactId>renan</artifactId>
+  
+  <packaging>war</packaging>
+  
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>Renan API</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<jersey.version> 2.28 </jersey.version>
+  	<tomcat.version> 7.0.86</tomcat.version>
+    <maven.compiler.target>1.8</maven.compiler.target>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<logback.version> 1.2.3 </logback.version>
+	<jackson.version> 2.9.8 </jackson.version>
+  </properties>
+  
+  <dependencies>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-core</artifactId>
+	    <version>2.28.2</version>
+	    <scope>test</scope>
+	</dependency>
+    
+    <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+           <version>5.1.6</version>
+    </dependency>
+    <dependency>
+           <groupId>org.glassfish.jersey.core</groupId>
+           <artifactId>jersey-server</artifactId>
+           <version>${jersey.version}</version>
+    </dependency>
+    <dependency>
+           <groupId>org.glassfish.jersey.containers</groupId>
+           <artifactId>jersey-container-servlet</artifactId>
+           <version>${jersey.version}</version>
+    </dependency>
+     <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-jackson</artifactId>
+        <version>${jersey.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.glassfish.jersey.inject</groupId>
+	    <artifactId>jersey-hk2</artifactId>
+	    <version>${jersey.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.glassfish.jersey.test-framework</groupId>
+	    <artifactId>jersey-test-framework-core</artifactId>
+	    <version>${jersey.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+    		<groupId>org.glassfish.jersey.test-framework.providers</groupId>
+	    <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+	    <version>${jersey.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-annotations</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider -->
+<!-- 	<dependency>
+	    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+	    <artifactId>jackson-jaxrs-json-provider</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+ -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.datatype</groupId>
+		<artifactId>jackson-datatype-joda</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+    
+    <dependency>
+          <groupId>org.glassfish.jersey.core</groupId>
+          <artifactId>jersey-client</artifactId>
+          <version>${jersey.version}</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.18.8</version>
+		<scope>provided</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+	<dependency>
+	    <groupId>javax.ws.rs</groupId>
+	    <artifactId>javax.ws.rs-api</artifactId>
+	    <version>2.1.1</version>
+	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.26</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>${logback.version}</version>
+	</dependency>
+
+  </dependencies>
+  <build>
+    <finalName>renan</finalName>
+    <plugins>
+   		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.2.2</version>
+			<configuration>
+			    <failOnMissingWebXml>false</failOnMissingWebXml>   
+			</configuration>
+		</plugin>
+    		<plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<!-- http port -->
+				<port>8080</port>
+				<!-- application path always starts with / -->
+				<path>/v1</path>
+				<contextReloadable>true</contextReloadable>
+				<backgroundProcessorDelay>5</backgroundProcessorDelay>
+			</configuration>
+			<dependencies>
+			<!--  workaround para ver os logs sem deployar a api -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-access</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<!-- somente para nao dar upgrade no meu tomcat -->
+			<!-- problema com o - source 5 do maven -->
+          <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-util</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-coyote</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-api</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper-el</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-el-api</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-tribes</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina-ha</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-annotations-api</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-juli</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-juli</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-log4j</artifactId>
+            <version>${tomcat.version}</version>
+          </dependency>
+			</dependencies>
+		</plugin>
+    </plugins>
+  </build>
+</project>
