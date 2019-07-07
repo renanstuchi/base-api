@@ -1,4 +1,13 @@
-com/renan/config/MyApp.class
+com/renan/config/DataAccessModule.class
 com/renan/resources/TaskResource.class
-com/renan/services/TaskService.class
+com/renan/config/DBIProvider.class
 com/renan/models/Task.class
+com/renan/config/ServicesModule.class
+com/renan/config/DataAccessModule$DAOProvider.class
+com/renan/config/NamedPropertiesModule.class
+com/renan/config/ResourcesModule.class
+com/renan/daos/TaskDAO.class
+com/renan/config/DBIProvider$1.class
+com/renan/config/MyApp.class
+com/renan/config/DBIProvider$DBConfig.class
+com/renan/services/TaskService.class

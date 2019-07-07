@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.renan.resources.TaskResourceUnitTest" time="0.258" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="com.renan.resources.TaskResourceUnitTest" time="0.412" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
@@ -7,7 +7,7 @@
     <property name="user.country.format" value="BR"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/renanstuchi/workspace/renan"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/renanstuchi/workspace/base-api"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/renanstuchi/workspace/renan"/>
+    <property name="user.dir" value="/Users/renanstuchi/workspace/base-api"/>
     <property name="java.runtime.version" value="1.8.0_131-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -67,6 +67,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.renan.resources.TaskResourceUnitTest" name="testPost" time="0.248"/>
-  <testcase classname="com.renan.resources.TaskResourceUnitTest" name="testGetAll" time="0.01"/>
+  <testcase classname="com.renan.resources.TaskResourceUnitTest" name="testPost" time="0.397"/>
+  <testcase classname="com.renan.resources.TaskResourceUnitTest" name="testGetAll" time="0.015"/>
 </testsuite>

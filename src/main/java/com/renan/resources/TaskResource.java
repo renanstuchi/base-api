@@ -3,6 +3,7 @@ package com.renan.resources;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,12 +15,16 @@ import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 
 import com.renan.models.Task;
+import com.renan.services.TaskService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Path("/task")
 @Slf4j
 public class TaskResource {
+	
+	@Inject
+	private TaskService service;
 
 	@Path("/{id}")
 	@GET
@@ -40,16 +45,8 @@ public class TaskResource {
 		
 		log.info("GET ALL request.");
 		
-		List<Task> l = new ArrayList<>();
-		Task t = new Task();
-		t.setId(1l);
-		t.setName("teste");
-		t.setStatus("uuuuu");
-		
-		l.add(t);
-		
-		//return "HELLO WORLD";
-		return l;
+
+		return service.getAllTasks();
 	}
 	
 	@DELETE
