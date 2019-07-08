@@ -7,6 +7,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Scopes;
+import com.renan.daos.HealthCheckDAO;
 import com.renan.daos.TaskDAO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ public class DataAccessModule extends AbstractModule{
         bind(Jdbi.class).toProvider(DBIProvider.class).in(Scopes.SINGLETON);
         
         bindDAO(TaskDAO.class);
+        bindDAO(HealthCheckDAO.class);
     }
     
 	private <T> void bindDAO(Class<T> type) {

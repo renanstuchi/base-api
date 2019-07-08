@@ -24,13 +24,11 @@ public class GuiceFeature implements Feature {
 
 	@Override
     public boolean configure(FeatureContext context) {
-       // ServiceLocator serviceLocator = InjectionManager.getInstance(ServiceLocator.class);
+
         GuiceBridge.getGuiceBridge().initializeGuiceBridge(sl);
         GuiceIntoHK2Bridge guiceBridge = sl.getService(GuiceIntoHK2Bridge.class);
-        
-        Injector injector = Guice.createInjector(new NamedPropertiesModule(), new DataAccessModule(), new ServicesModule(), new ResourcesModule());
-		
-        guiceBridge.bridgeGuiceInjector(injector);
+
+        guiceBridge.bridgeGuiceInjector(ContextListener.injector);
         
         return true;
     }

@@ -33,28 +33,16 @@ public class MyApp extends ResourceConfig {
 	@Inject
 	public MyApp(ServiceLocator serviceLocator) {
 		// Metrics
-		MetricRegistry metrics = SharedMetricRegistries.setDefault("base-api");
-		
-		// JVM
-		metrics.registerAll(new MemoryUsageGaugeSet());
-		metrics.registerAll(new GarbageCollectorMetricSet());
+		MetricRegistry metrics = SharedMetricRegistries.getDefault();
 
-		//final MetricRegistry metricRegistry = new MetricRegistry();
 		log.info("---- Starting MyApp ----");
 
-		packages("com.renan.resources");
-		packages("com.codahale.metrics.jersey2");
+		packages("com.renan");
 
 		register(new InstrumentedResourceMethodApplicationListener (metrics));
 		
 		register(GuiceFeature.class);
 		register(JacksonFeature.class);
-
-		ConsoleReporter.forRegistry(metrics)
-	        .convertRatesTo(TimeUnit.SECONDS)
-	        .convertDurationsTo(TimeUnit.MILLISECONDS)
-	        .build()
-	        .start(1, TimeUnit.MINUTES);
 	}
 
 }

@@ -21,6 +21,8 @@
 	<logback.version> 1.2.3 </logback.version>
 	<jackson.version> 2.9.8 </jackson.version>
 	<metrics.version> 4.0.0 </metrics.version>
+	<jdbi.version> 3.8.2 </jdbi.version>
+	<guice.version> 4.2.2 </guice.version>
   </properties>
   
   <dependencies>
@@ -79,24 +81,24 @@
     <dependency>
         <groupId>org.jdbi</groupId>
         <artifactId>jdbi3-core</artifactId>
-        <version>3.8.2</version>
+        <version>${jdbi.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-sqlobject -->
 	<dependency>
 	    <groupId>org.jdbi</groupId>
 	    <artifactId>jdbi3-sqlobject</artifactId>
-	    <version>3.8.2</version>
+	    <version>${jdbi.version}</version>
 	</dependency>
     <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 	<dependency>
 	    <groupId>com.google.inject</groupId>
 	    <artifactId>guice</artifactId>
-	    <version>4.2.2</version>
+	    <version>${guice.version}</version>
 	</dependency>
    	<dependency>
 		<groupId>com.google.inject.extensions</groupId>
 		<artifactId>guice-servlet</artifactId>
-		<version>4.2.2</version>
+		<version>${guice.version}</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
@@ -243,7 +245,7 @@
 				<backgroundProcessorDelay>5</backgroundProcessorDelay>
 			</configuration>
 			<dependencies>
-			<!--  workaround para ver os logs sem deployar a api -->
+			<!--  workaround to see logs without deploy ( running in IDE, etc) -->
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-core</artifactId>

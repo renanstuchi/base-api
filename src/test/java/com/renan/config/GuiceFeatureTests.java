@@ -14,12 +14,12 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 @Provider
-public class GuiceFeature implements Feature {
+public class GuiceFeatureTests implements Feature {
 
     private final ServiceLocator sl;
 
     @Inject
-    public GuiceFeature(final ServiceLocator sl) {
+    public GuiceFeatureTests(final ServiceLocator sl) {
         this.sl = sl;
     }
 

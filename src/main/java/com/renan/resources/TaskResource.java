@@ -33,9 +33,9 @@ public class TaskResource {
 	@Path("/{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Timed(name="timeGET")
-	@Metered(name="countGET")
-	@ExceptionMetered(name="exceptionCountGET")
+	@Timed(name="getTask(Timed)")
+	@Metered(name="getTask(Metered)")
+	@ExceptionMetered(name="getTask(Exception)")
 	public Task getTask(@PathParam("id") Long id) {
 		
 		Task t = new Task();
@@ -48,9 +48,9 @@ public class TaskResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Timed(name="timeGETALL")
-	@Metered(name="countGETALL")
-	@ExceptionMetered(name="exceptionCountGETALL")
+	@Timed(name="getAllTasks(Timed)")
+	@Metered(name="getAllTasks(Metered)")
+	@ExceptionMetered(name="getAllTasks(Exception)")
 	public List<Task> getAllTasks() {
 		
 		log.info("GET ALL request.");
@@ -69,9 +69,9 @@ public class TaskResource {
 	
 	@DELETE
 	@Path("/{id}")
-	@Timed(name="timeDELETE")
-	@Metered(name="countDELETE")
-	@ExceptionMetered(name="exceptionCountDELETE")
+	@Timed(name="deleteTask(Timed)")
+	@Metered(name="deleteTask(Metered)")
+	@ExceptionMetered(name="deleteTask(Exception)")
 	public void deleteTask(@PathParam("id") Long id) {
 		
 		log.info("Deleting task={}", id);
@@ -79,9 +79,9 @@ public class TaskResource {
 	
 	@PUT
 	@Path("/{id}")
-	@Timed(name="timePUT")
-	@Metered(name="countPUT")
-	@ExceptionMetered(name="exceptionCountPUT")
+	@Timed(name="updateTask(Timed)")
+	@Metered(name="updateTask(Metered)")
+	@ExceptionMetered(name="updateTask(Exception)")
 	public Task updateTask(@PathParam("id") Long id, Task task) {
 		
 		task.setId(id);
@@ -92,9 +92,9 @@ public class TaskResource {
 	}
 	
 	@POST
-	@Timed(name="timePOST")
-	@Metered(name="countPOST")
-	@ExceptionMetered(name="exceptionCountPOST")
+	@Timed(name="createTask(Timed)")
+	@Metered(name="createTask(Metered)")
+	@ExceptionMetered(name="createTask(Exception")
 	public Task createTask(Task task) {
 		
 		log.info("Creating new task={}", task);

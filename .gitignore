@@ -4,4 +4,7 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 target/
-/.settings/
+.classpath
+.project
+.settings/
+.lst

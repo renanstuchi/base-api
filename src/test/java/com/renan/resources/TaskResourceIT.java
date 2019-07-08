@@ -19,7 +19,7 @@ import org.glassfish.jersey.test.TestProperties;
 import org.junit.Test;
 
 import com.google.inject.servlet.GuiceFilter;
-import com.renan.config.GuiceFeature;
+import com.renan.config.GuiceFeatureTests;
 import com.renan.config.MyApp;
 import com.renan.models.Task;
 
@@ -29,18 +29,18 @@ public class TaskResourceIT extends JerseyTest {
 	public Application configure() {
 		enable(TestProperties.LOG_TRAFFIC);
 		enable(TestProperties.DUMP_ENTITY);
-		return new ResourceConfig().packages("com.renan.resources").register(GuiceFeature.class);
+		return new ResourceConfig().packages("com.renan.resources").register(GuiceFeatureTests.class);
 	}
 	
 	@Test
 	public void testGetAll() {
-		Long idExpted = 2l;
+		Long idExpted = 1l;
 		
 		Response response = target("/task").request().get();
 		List<Task> tasks = response.readEntity(new GenericType<List<Task>>(){});
 		
 		assertEquals("Expected Status = 200", Status.OK.getStatusCode(), response.getStatus());
-		assertEquals("Expected Id = 2", idExpted, tasks.get(0).getId());
+		assertEquals("Expected Id = 1", idExpted, tasks.get(0).getId());
 	}
 	
 	@Test
