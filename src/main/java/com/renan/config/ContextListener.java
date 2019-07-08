@@ -1,24 +1,18 @@
 package com.renan.config;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.EnumSet;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.ServletRegistration;
 import javax.servlet.annotation.WebListener;
 
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.SharedMetricRegistries;
 import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.jersey2.InstrumentedResourceMethodApplicationListener;
 import com.codahale.metrics.jvm.GarbageCollectorMetricSet;
 import com.codahale.metrics.jvm.MemoryUsageGaugeSet;
 import com.codahale.metrics.servlets.AdminServlet;
@@ -29,10 +23,8 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
-import com.google.common.collect.ImmutableMap;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Key;
 import com.google.inject.Scopes;
 import com.google.inject.name.Names;
 import com.google.inject.servlet.GuiceFilter;
@@ -52,6 +44,8 @@ public class ContextListener extends GuiceServletContextListener {
 
 	public ContextListener() {
 		super();
+
+		Logger.getGlobal().setLevel(Level.INFO);
 	}
 
 	@Override
@@ -73,27 +67,25 @@ public class ContextListener extends GuiceServletContextListener {
 	protected Injector getInjector() {
 		log.debug("Create Injector");
 
-		injector = Guice.createInjector(new NamedPropertiesModule(), new DataAccessModule(),
-				 new ResourcesModule(), new ServletModule() {
-					@Override
-					protected void configureServlets() {
+		injector = Guice.createInjector(new NamedPropertiesModule(), new DataAccessModule(), new ResourcesModule(), 
+			new ServletModule() {
+				@Override
+				protected void configureServlets() {
 
-						String templateDir = servletContext.getRealPath("/WEB-INF/templates");
-						bindConstant().annotatedWith(Names.named("templateDir")).to(templateDir);
-						
-						// Metrics
-						MetricRegistry metrics = SharedMetricRegistries.setDefault(METRICS_REGISTRY_NAME);
-						
-						// JVM
-						metrics.registerAll(new MemoryUsageGaugeSet());
-						metrics.registerAll(new GarbageCollectorMetricSet());
-						
-						bind(AdminServlet.class).in(Scopes.SINGLETON);
-						serve("/metrics/*").with(AdminServlet.class);
-					}
-
+					String templateDir = servletContext.getRealPath("/WEB-INF/templates");
+					bindConstant().annotatedWith(Names.named("templateDir")).to(templateDir);
+					
+					// Metrics
+					MetricRegistry metrics = SharedMetricRegistries.setDefault(METRICS_REGISTRY_NAME);
+					
+					// JVM
+					metrics.registerAll(new MemoryUsageGaugeSet());
+					metrics.registerAll(new GarbageCollectorMetricSet());
+					
+					bind(AdminServlet.class).in(Scopes.SINGLETON);
+					serve("/metrics/*").with(AdminServlet.class);
 				}
-
+			}
 		);
 
 		// Tell jackson about joda time and output dates as ISO strings
