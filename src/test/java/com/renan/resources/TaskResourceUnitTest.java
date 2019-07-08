@@ -20,6 +20,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.renan.constants.TaskStatus;
 import com.renan.daos.TaskDAO;
 import com.renan.models.Task;
 import com.renan.services.TaskService;
@@ -46,7 +47,7 @@ public class TaskResourceUnitTest {
 		Task t = new Task();
 		t.setId(1l);
 		t.setName("teste");
-		t.setStatus("uuuuu");
+		t.setStatus(TaskStatus.IN_PROGRESS);
 		
 		l.add(t);
 		
