@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>com</groupId>
-  <artifactId>renan</artifactId>
+  <artifactId>base-api</artifactId>
   
   <packaging>war</packaging>
   
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-dev</version>
   
   <name>Renan API</name>
   <url>http://maven.apache.org</url>
@@ -20,6 +20,7 @@
 	<maven.compiler.source>1.8</maven.compiler.source>
 	<logback.version> 1.2.3 </logback.version>
 	<jackson.version> 2.9.8 </jackson.version>
+	<metrics.version> 4.0.0 </metrics.version>
   </properties>
   
   <dependencies>
@@ -37,6 +38,29 @@
 	    <artifactId>mockito-core</artifactId>
 	    <version>2.28.2</version>
 	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+        <groupId>io.dropwizard.metrics</groupId>
+        <artifactId>metrics-core</artifactId>
+        <version>${metrics.version}</version>
+    </dependency>
+	<dependency>
+	   <groupId>io.dropwizard.metrics</groupId>
+	   <artifactId>metrics-jersey2</artifactId>
+	   <version>${metrics.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>io.dropwizard.metrics</groupId>
+		<artifactId>metrics-jvm</artifactId>
+		<version>${metrics.version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-servlets -->
+	<dependency>
+	    <groupId>io.dropwizard.metrics</groupId>
+	    <artifactId>metrics-servlets</artifactId>
+	    <version>${metrics.version}</version>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.glassfish.hk2/guice-bridge -->
@@ -74,12 +98,14 @@
 		<artifactId>guice-servlet</artifactId>
 		<version>4.2.2</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>servlet-api</artifactId>
-		<version>2.5</version>
-		<scope>provided</scope>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.1</version>
+	    <scope>provided</scope>
 	</dependency>
+
     <dependency>
            <groupId>org.glassfish.jersey.core</groupId>
            <artifactId>jersey-server</artifactId>
@@ -180,7 +206,7 @@
             <configuration>
                 <url>jdbc:mysql://127.0.0.1:3306/base_api_dev</url>
                 <user>root</user>
-                <password>root</password>
+                <password></password>
             </configuration>
             <dependencies>
             		<dependency>
@@ -195,7 +221,13 @@
 			<artifactId>maven-war-plugin</artifactId>
 			<version>3.2.2</version>
 			<configuration>
-			    <failOnMissingWebXml>false</failOnMissingWebXml>   
+				<warName>${project.artifactId}</warName>
+			    <failOnMissingWebXml>false</failOnMissingWebXml> 
+			    <archive>
+		             <manifestEntries>
+		                 <version>${project.version}</version>
+		             </manifestEntries>
+		         </archive>
 			</configuration>
 		</plugin>
     		<plugin>

@@ -14,21 +14,28 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 
+import com.codahale.metrics.annotation.ExceptionMetered;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import com.renan.models.Task;
 import com.renan.services.TaskService;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Path("/task")
 @Slf4j
 public class TaskResource {
 	
-	@Inject
+	@Inject @Setter
 	private TaskService service;
 
 	@Path("/{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Timed(name="timeGET")
+	@Metered(name="countGET")
+	@ExceptionMetered(name="exceptionCountGET")
 	public Task getTask(@PathParam("id") Long id) {
 		
 		Task t = new Task();
@@ -41,16 +48,30 @@ public class TaskResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Timed(name="timeGETALL")
+	@Metered(name="countGETALL")
+	@ExceptionMetered(name="exceptionCountGETALL")
 	public List<Task> getAllTasks() {
 		
 		log.info("GET ALL request.");
 		
-
+		List<Task> l = new ArrayList<>();
+		Task t = new Task();
+		t.setId(1l);
+		t.setName("teste");
+		t.setStatus("uuuuu");
+		
+		l.add(t);
+		
+		//return l;
 		return service.getAllTasks();
 	}
 	
 	@DELETE
 	@Path("/{id}")
+	@Timed(name="timeDELETE")
+	@Metered(name="countDELETE")
+	@ExceptionMetered(name="exceptionCountDELETE")
 	public void deleteTask(@PathParam("id") Long id) {
 		
 		log.info("Deleting task={}", id);
@@ -58,6 +79,9 @@ public class TaskResource {
 	
 	@PUT
 	@Path("/{id}")
+	@Timed(name="timePUT")
+	@Metered(name="countPUT")
+	@ExceptionMetered(name="exceptionCountPUT")
 	public Task updateTask(@PathParam("id") Long id, Task task) {
 		
 		task.setId(id);
@@ -68,6 +92,9 @@ public class TaskResource {
 	}
 	
 	@POST
+	@Timed(name="timePOST")
+	@Metered(name="countPOST")
+	@ExceptionMetered(name="exceptionCountPOST")
 	public Task createTask(Task task) {
 		
 		log.info("Creating new task={}", task);

@@ -29,7 +29,10 @@ public class DBIProvider implements Provider<Jdbi>{
 
 			datasource.setUrl(config.url);
 			datasource.setUser(config.user);
-			datasource.setPassword(config.pass);
+			
+			if(config.pass != null && !config.pass.isEmpty()) {
+				datasource.setPassword(config.pass);
+			}
 			
 		} else {
 			log.info("Running on localhost");

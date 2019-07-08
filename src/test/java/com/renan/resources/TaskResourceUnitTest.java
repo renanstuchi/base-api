@@ -20,15 +20,23 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.renan.daos.TaskDAO;
 import com.renan.models.Task;
+import com.renan.services.TaskService;
 
 public class TaskResourceUnitTest {
 	
 	TaskResource resource;
+	TaskService service;
+	TaskDAO dao;
 	
 	@Before
 	public void prepare() {
-		resource = mock(TaskResource.class);
+		
+		dao = mock(TaskDAO.class);
+		service = spy(new TaskService(dao));
+		resource = spy(new TaskResource());
+		resource.setService(service);
 	}
 
 	@Test
@@ -42,7 +50,8 @@ public class TaskResourceUnitTest {
 		
 		l.add(t);
 		
-		when(resource.getAllTasks()).thenReturn(l);
+		//when(resource.getAllTasks()).thenReturn(l);
+		when(dao.getTasks()).thenReturn(l);
 		
 		List<Task> tasks = resource.getAllTasks();
 		

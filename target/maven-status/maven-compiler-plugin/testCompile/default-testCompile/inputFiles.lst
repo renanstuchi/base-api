@@ -1,3 +1,4 @@
 /Users/renanstuchi/workspace/base-api/src/test/java/com/renan/resources/TaskResourceUnitTest.java
+/Users/renanstuchi/workspace/base-api/src/test/java/com/renan/config/GuiceFeature.java
 /Users/renanstuchi/workspace/base-api/src/test/java/com/renan/services/TaskServiceTest.java
-/Users/renanstuchi/workspace/base-api/src/test/java/com/renan/resources/TaskResourceIntegrationTest.java
+/Users/renanstuchi/workspace/base-api/src/test/java/com/renan/resources/TaskResourceIT.java

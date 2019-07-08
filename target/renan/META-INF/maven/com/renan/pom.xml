@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>com</groupId>
-  <artifactId>renan</artifactId>
+  <artifactId>base-api</artifactId>
   
   <packaging>war</packaging>
   
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-dev</version>
   
   <name>Renan API</name>
   <url>http://maven.apache.org</url>

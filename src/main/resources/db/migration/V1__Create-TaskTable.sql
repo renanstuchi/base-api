@@ -1,4 +1,4 @@
-CREATE table TASK (
+CREATE table task (
 	id int(10) unsigned NOT NULL AUTO_INCREMENT,
 	name varchar(1024) NOT NULL,
 	description varchar(1024) NOT NULL,

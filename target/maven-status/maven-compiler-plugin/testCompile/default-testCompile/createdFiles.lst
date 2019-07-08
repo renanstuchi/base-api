@@ -1,3 +1,5 @@
-com/renan/resources/TaskResourceIntegrationTest.class
+com/renan/resources/TaskResourceIT$1.class
 com/renan/services/TaskServiceTest.class
 com/renan/resources/TaskResourceUnitTest.class
+com/renan/resources/TaskResourceIT.class
+com/renan/config/GuiceFeature.class

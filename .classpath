@@ -4,20 +4,24 @@
   <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
   <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
-  <classpathentry kind="var" path="M2_REPO/javax/inject/javax.inject/1/javax.inject-1.jar" sourcepath="M2_REPO/javax/inject/javax.inject/1/javax.inject-1-sources.jar">
+  <classpathentry kind="var" path="M2_REPO/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar" sourcepath="M2_REPO/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1-sources.jar">
     <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/inject/javax.inject/1/javax.inject-1-javadoc.jar!/" name="javadoc_location"/>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar" sourcepath="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar" sourcepath="M2_REPO/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1-sources.jar">
+  <classpathentry kind="var" path="M2_REPO/javax/inject/javax.inject/1/javax.inject-1.jar" sourcepath="M2_REPO/javax/inject/javax.inject/1/javax.inject-1-sources.jar">
     <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1-javadoc.jar!/" name="javadoc_location"/>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/inject/javax.inject/1/javax.inject-1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar" sourcepath="M2_REPO/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
@@ -51,14 +55,34 @@
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/objenesis/objenesis/2.6/objenesis-2.6-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0-sources.jar">
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-core/4.0.0/metrics-core-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-core/4.0.0/metrics-core-4.0.0-sources.jar">
     <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-core/4.0.0/metrics-core-4.0.0-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0-sources.jar">
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar">
     <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-jersey2/4.0.0/metrics-jersey2-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-jersey2/4.0.0/metrics-jersey2-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-jersey2/4.0.0/metrics-jersey2-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-annotation/4.0.0/metrics-annotation-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-annotation/4.0.0/metrics-annotation-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-annotation/4.0.0/metrics-annotation-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-api/2.5.0/hk2-api-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/hk2-api/2.5.0/hk2-api-2.5.0-sources.jar">
@@ -71,14 +95,90 @@
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/hk2-utils/2.5.0/hk2-utils-2.5.0-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar" sourcepath="M2_REPO/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0/aopalliance-repackaged-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0/aopalliance-repackaged-2.5.0-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0/aopalliance-repackaged-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar" sourcepath="M2_REPO/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar" sourcepath="M2_REPO/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-jvm/4.0.0/metrics-jvm-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-jvm/4.0.0/metrics-jvm-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-jvm/4.0.0/metrics-jvm-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-servlets/4.0.0/metrics-servlets-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-servlets/4.0.0/metrics-servlets-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-servlets/4.0.0/metrics-servlets-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-healthchecks/4.0.0/metrics-healthchecks-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-healthchecks/4.0.0/metrics-healthchecks-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-healthchecks/4.0.0/metrics-healthchecks-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/io/dropwizard/metrics/metrics-json/4.0.0/metrics-json-4.0.0.jar" sourcepath="M2_REPO/io/dropwizard/metrics/metrics-json/4.0.0/metrics-json-4.0.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/io/dropwizard/metrics/metrics-json/4.0.0/metrics-json-4.0.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar" sourcepath="M2_REPO/com/papertrail/profiler/1.0.2/profiler-1.0.2-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/papertrail/profiler/1.0.2/profiler-1.0.2-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.7/joda-time-2.7.jar" sourcepath="M2_REPO/joda-time/joda-time/2.7/joda-time-2.7-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/joda-time/joda-time/2.7/joda-time-2.7-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/guice-bridge/2.5.0/guice-bridge-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/external/jakarta.inject/2.5.0/jakarta.inject-2.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4.jar" sourcepath="M2_REPO/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.4/jakarta.annotation-api-1.3.4-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="var" path="M2_REPO/com/google/inject/guice/4.2.2/guice-4.2.2.jar" sourcepath="M2_REPO/com/google/inject/guice/4.2.2/guice-4.2.2-sources.jar">
@@ -101,11 +201,6 @@
   <classpathentry kind="var" path="M2_REPO/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar" sourcepath="M2_REPO/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="var" path="M2_REPO/io/leangen/geantyref/geantyref/1.3.7/geantyref-1.3.7.jar" sourcepath="M2_REPO/io/leangen/geantyref/geantyref/1.3.7/geantyref-1.3.7-sources.jar">
@@ -148,34 +243,9 @@
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/google/inject/extensions/guice-servlet/4.2.2/guice-servlet-4.2.2-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-server/2.28/jersey-server-2.28-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="var" path="M2_REPO/jakarta/ws/rs/jakarta.ws.rs-api/2.1.5/jakarta.ws.rs-api-2.1.5.jar" sourcepath="M2_REPO/jakarta/ws/rs/jakarta.ws.rs-api/2.1.5/jakarta.ws.rs-api-2.1.5-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/2.1.5/jakarta.ws.rs-api-2.1.5-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar" sourcepath="M2_REPO/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/core/jersey-client/2.28/jersey-client-2.28-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.28/jersey-media-jaxb-2.28-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/containers/jersey-container-servlet/2.28/jersey-container-servlet-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/containers/jersey-container-servlet/2.28/jersey-container-servlet-2.28-sources.jar">
@@ -198,21 +268,6 @@
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.28/jersey-entity-filtering-2.28-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
   <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.9.8/jackson-module-jaxb-annotations-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.9.8/jackson-module-jaxb-annotations-2.9.8-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.9.8/jackson-module-jaxb-annotations-2.9.8-javadoc.jar!/" name="javadoc_location"/>
@@ -223,12 +278,6 @@
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/inject/jersey-hk2/2.28/jersey-hk2-2.28-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0.jar" sourcepath="M2_REPO/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/hk2/hk2-locator/2.5.0/hk2-locator-2.5.0-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar" sourcepath="M2_REPO/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/test-framework/jersey-test-framework-core/2.28/jersey-test-framework-core-2.28.jar" sourcepath="M2_REPO/org/glassfish/jersey/test-framework/jersey-test-framework-core/2.28/jersey-test-framework-core-2.28-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/org/glassfish/jersey/test-framework/jersey-test-framework-core/2.28/jersey-test-framework-core-2.28-javadoc.jar!/" name="javadoc_location"/>
@@ -277,11 +326,6 @@
   <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.9.8/jackson-datatype-joda-2.9.8.jar" sourcepath="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.9.8/jackson-datatype-joda-2.9.8-sources.jar">
     <attributes>
       <attribute value="jar:file:/Users/renanstuchi/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.9.8/jackson-datatype-joda-2.9.8-javadoc.jar!/" name="javadoc_location"/>
-    </attributes>
-  </classpathentry>
-  <classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.7/joda-time-2.7.jar" sourcepath="M2_REPO/joda-time/joda-time/2.7/joda-time-2.7-sources.jar">
-    <attributes>
-      <attribute value="jar:file:/Users/renanstuchi/.m2/repository/joda-time/joda-time/2.7/joda-time-2.7-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
   <classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" sourcepath="M2_REPO/org/projectlombok/lombok/1.18.8/lombok-1.18.8-sources.jar">

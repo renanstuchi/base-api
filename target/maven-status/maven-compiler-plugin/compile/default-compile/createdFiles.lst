@@ -3,7 +3,9 @@ com/renan/resources/TaskResource.class
 com/renan/config/DBIProvider.class
 com/renan/models/Task.class
 com/renan/config/ServicesModule.class
+com/renan/config/GuiceFeature.class
 com/renan/config/DataAccessModule$DAOProvider.class
+com/renan/config/ContextListener.class
 com/renan/config/NamedPropertiesModule.class
 com/renan/config/ResourcesModule.class
 com/renan/daos/TaskDAO.class
