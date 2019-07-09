@@ -35,7 +35,11 @@ public class MyApp extends ResourceConfig {
 		// Metrics
 		MetricRegistry metrics = SharedMetricRegistries.getDefault();
 
-		log.info("---- Starting MyApp ----");
+		log.info("===========================================================");
+		log.info("===========================================================");
+		log.info("==================== Starting API =========================");
+		log.info("===========================================================");
+		log.info("===========================================================");
 
 		packages("com.renan");
 

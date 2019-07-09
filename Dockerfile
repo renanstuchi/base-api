@@ -37,16 +37,16 @@ WORKDIR /
 
 # copy your config files to docker. IMPORTANT !
 ADD ./scripts/bind_0.cnf /etc/mysql/conf.d/bind_0.cnf
-ADD ./scripts/tomcat-run.sh /tomcat-run.sh
+#ADD ./scripts/tomcat-run.sh /tomcat-run.sh
 ADD ./scripts/run.sh /run.sh
 ADD ./scripts/tomcat-users.xml $TOMCAT_HOME/conf/tomcat-users.xml
 ADD ./scripts/supervisord-mysql.conf /etc/supervisor/conf.d/supervisord-mysql.conf
-ADD ./scripts/supervisord-tomcat.conf /etc/supervisor/conf.d/supervisord-tomcat.conf
-ADD ./scripts/supervisord-flyway.conf /etc/supervisor/conf.d/supervisord-flyway.conf
+#ADD ./scripts/supervisord-tomcat.conf /etc/supervisor/conf.d/supervisord-tomcat.conf
+ADD ./scripts/supervisord-deploy.conf /etc/supervisor/conf.d/supervisord-deploy.conf
 ADD ./scripts/settings.xml $TOMCAT_HOME/conf/settings.xml
 ADD ./scripts/context.xml $TOMCAT_HOME/webapps/manager/META-INF/context.xml
 
-ADD ./scripts/wait_db_ready.sh /wait_db_ready.sh
+ADD ./scripts/deploy_api.sh /deploy_api.sh
 
 WORKDIR /app
 
@@ -54,21 +54,25 @@ RUN mkdir /app/api
 RUN mkdir /app/api/src
 
 ADD pom.xml /app/api
+ADD mvnEclipse /app/api/mvnEclipse
 
 WORKDIR /app/api
 
-RUN mvn dependency:go-offline -B
+RUN chmod 755 mvnEclipse
 
-ADD src /app/api/src
+#RUN mvn dependency:go-offline -B
+RUN ./mvnEclipse
+
+#ADD src /app/api/src
 
 # STOP the docker if BUILD fails (junit tests or wrong code)
-RUN mvn clean package
+#RUN mvn clean package
 
 WORKDIR /
 
 RUN chmod 755 /*.sh
 
-COPY ./target/*.war $TOMCAT_HOME/webapps
+#COPY ./target/*.war $TOMCAT_HOME/webapps
 
 VOLUME ["/var/lib/mysql"]
 
