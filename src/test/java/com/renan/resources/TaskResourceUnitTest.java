@@ -16,6 +16,7 @@ import java.util.List;
 import javax.ws.rs.core.Application;
 
 import org.glassfish.jersey.server.ResourceConfig;
+import org.hamcrest.CoreMatchers;
 //import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,9 +44,10 @@ public class TaskResourceUnitTest {
 	@Test
 	public void testGetAll() {
 		
+		Long expected = 1l;
 		List<Task> l = new ArrayList<>();
 		Task t = new Task();
-		t.setId(1l);
+		t.setId(expected);
 		t.setName("teste");
 		t.setStatus(TaskStatus.IN_PROGRESS);
 		
@@ -55,15 +57,45 @@ public class TaskResourceUnitTest {
 		when(dao.getTasks()).thenReturn(l);
 		
 		List<Task> tasks = resource.getAllTasks();
-		
-		Long expected = 1l;
-		
+
 		assertEquals(expected, tasks.get(0).getId());
+		verify(dao).getTasks();
 	}
 	
 	@Test
 	public void testPost() {
 		
+		Task task = new Task();
+		task.setName("test");
+		task.setDescription("desc");
+		task.setAssignedTo("me");
+		task.setStatus(TaskStatus.COMPLETED);
+		
+		doReturn(1l).when(dao).inserTask(task);
+		doReturn(task).when(dao).getTaskById(1l);
+		
+		Task inserted = resource.createTask(task);
+
+		assertEquals(inserted.getName(), task.getName());
+		verify(dao).inserTask(task);
+	}
+	
+	@Test
+	public void testPostMissingDescription() {
+		
+		Task task = new Task();
+		task.setName("test");
+		task.setAssignedTo("me");
+		task.setStatus(TaskStatus.COMPLETED);
+		
+		try {
+			resource.createTask(task);
+			fail("Should not success");
+		} catch(Exception e) {
+			assertThat(e.getMessage(), CoreMatchers.containsString("property (description)"));
+		}
+
+		verify(dao, never()).inserTask(task);
 	}
 	
 }

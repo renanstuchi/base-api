@@ -67,7 +67,7 @@ public class TaskResource {
 		
 		service.deleteTask(id);
 		
-		return Response.ok().build();
+		return Response.noContent().build();
 	}
 	
 	@PUT
