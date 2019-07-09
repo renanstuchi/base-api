@@ -62,11 +62,12 @@ Em caso de sucesso, a API ficará disponível através da url configurada no seu
 ## Models existentes na API
 
 Atualmente a API possui apenas um model do tipo `Task`, com as seguintes propriedades:
-- `id` (integer)
-- `name` (varchar 1024)
-- `description` (varchar 1024)
-- `assignedTo` (varchar 256)
-- `status` (varchar 128) (possíveis valores: OPEN, PENDING, IN_PROGRESS, READY_TO_TEST, READY_TO_MERGE, COMPLETED)
+- `id` (integer) 
+- `name` (varchar 1024) (obrigatório)
+- `description` (varchar 1024) (obrigatório)
+- `assignedTo` (varchar 256) (obrigatório)
+- `status` (varchar 128) (obrigatório) 
+    - (possíveis valores: OPEN, PENDING, IN_PROGRESS, READY_TO_TEST, READY_TO_MERGE, COMPLETED)
 - `created` (timestamp)
 - `updated` (timestamp)
 
@@ -74,19 +75,19 @@ Atualmente a API possui apenas um model do tipo `Task`, com as seguintes proprie
 
 > Os endpoints de `POST` e `PUT` esperam uma request com payload do tipo `application/json`
 
-`POST` `/task` para criar uma nova Task.
-`PUT` `/task/{id}` para atualizar uma Task existente.
-`DELETE` `/task/{id}` para deletar uma Task existente.
-`GET` `/task/{id}` para buscar uma Task específica por ID.
-`GET` `/task` para buscar todas as Tasks existentes.
-`PATCH` **não implementado**
+- `POST` `/task` para criar uma nova Task.
+- `PUT` `/task/{id}` para atualizar uma Task existente.
+- `DELETE` `/task/{id}` para deletar uma Task existente.
+- `GET` `/task/{id}` para buscar uma Task específica por ID.
+- `GET` `/task` para buscar todas as Tasks existentes.
+- `PATCH` **não implementado**
 
 ## Endpoints de Métricas e HealthCheck da API
 
-`GET` `/metrics/metrics?pretty=true`
-`GET` `/metrics/healthcheck`
-`GET` `/metrics/threads`
-`GET` `/metrics/ping`
+- `GET` `/metrics/metrics?pretty=true`
+- `GET` `/metrics/healthcheck`
+- `GET` `/metrics/threads`
+- `GET` `/metrics/ping`
 
 ## Exemplos de uso
 
