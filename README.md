@@ -79,6 +79,7 @@ Atualmente a API possui apenas um model do tipo `Task`, com as seguintes proprie
 `DELETE` `/task/{id}` para deletar uma Task existente.
 `GET` `/task/{id}` para buscar uma Task específica por ID.
 `GET` `/task` para buscar todas as Tasks existentes.
+`PATCH` **não implementado**
 
 ## Endpoints de Métricas e HealthCheck da API
 
@@ -99,7 +100,7 @@ curl --header "Content-Type: application/json" \
 Atualizando uma task
 curl --header "Content-Type: application/json" \
   --request PUT \
-  --data '{"status": "COMPLETED"}' \
+  --data '{name":"Task1","description":"My description", "assignedTo": "Me", "status": "COMPLETED"}' \
   http://localhost:8080/base-api/task/1
 
 Deletando uma task
